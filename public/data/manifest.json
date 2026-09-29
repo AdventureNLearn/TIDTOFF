@@ -1,0 +1,41 @@
+{
+  "title": "The internet did the oversight for free",
+  "kind": "national-device-archive",
+  "rows": 335701,
+  "uncompressedBytes": 50291519,
+  "uncompressedSha256": "ad59797d1fd80599dc030e1fab0db0f26e5cd8299a519038803fc2014a85bf44",
+  "gzipPath": "/data/cameras.archive",
+  "schemaPath": "/data/SCHEMA.txt",
+  "origin": "https://flocksurveillance.org/data/cameras.tsv",
+  "publisher": "Joshua Michael",
+  "originLastModified": "2026-08-28T15:13:03Z",
+  "originEtag": "W/\"6a91a57f-93d354\"",
+  "originGzipBytes": 9687892,
+  "rechecked": "2026-09-29",
+  "describedExport": "December 2025, as described by the publisher",
+  "mirrored": "2026-09-27",
+  "statusCounts": {
+    "inService": 214073,
+    "inPlanning": 83427,
+    "decommissioned": 38190,
+    "other": 11
+  },
+  "columns": [
+    "lat",
+    "lon",
+    "type",
+    "status",
+    "active",
+    "name",
+    "features",
+    "rotationAngle",
+    "OBJECTID",
+    "externalId",
+    "networkExternalId",
+    "organizationId",
+    "networkId",
+    "CreationDate",
+    "parentExternalId"
+  ],
+  "note": "Independent mirror of a published table. Not a Flock Safety product, not a live feed, not a permit roster."
+}

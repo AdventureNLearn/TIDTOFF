@@ -1,0 +1,68 @@
+The internet did the oversight for free
+Rebuild file for the national device archive
+================================================
+
+This folder is the archive. The map reads it. Replace the file, reload, and
+the map rebuilds. No account. No live feed. No vendor login.
+
+FILE
+  /data/cameras.archive
+  This is a gzip file. The extension is not .gz on purpose: a .gz URL was
+  being marked Content-Encoding: gzip and the browser unpacked it twice.
+  Save it as cameras.tsv.gz if you want the usual name.
+
+  gzip of a tab-separated table, one device per row, with a header row.
+
+ORIGIN
+  Mirrored 2026-09-27 from the public file at
+  https://flocksurveillance.org/data/cameras.tsv
+  That site is Joshua Michael's Flock Surveillance Map.
+  The file on that site was last modified 2026-08-28.
+  Michael has described the underlying export as a December 2025 snapshot
+  of device locations from Flock's own mapping system, after he reported
+  an unauthenticated exposure. This copy does not include exploit steps,
+  tokens, or a way back into that system.
+
+CHECKSUM
+  Uncompressed TSV SHA-256:
+  ad59797d1fd80599dc030e1fab0db0f26e5cd8299a519038803fc2014a85bf44
+  Uncompressed size: 50,291,519 bytes
+  Rows after the header: 335,701
+
+COLUMNS (tab-separated, in order)
+  1  lat                    decimal degrees
+  2  lon                    decimal degrees
+  3  type                   device code (falcon, wing, raven, ...)
+  4  status                 inService | inPlanning | decommissioned | other
+  5  active                 1 or 0
+  6  name                   device name as published
+  7  features               comma-separated capability tags
+  8  rotationAngle          degrees, may be empty; names with NB/SB/EB/WB
+                            are a better facing hint than this number
+  9  OBJECTID
+  10 externalId
+  11 networkExternalId
+  12 organizationId
+  13 networkId
+  14 CreationDate
+  15 parentExternalId
+
+REBUILD
+  gunzip -c cameras.tsv.gz > cameras.tsv
+  The running app fetches /data/cameras.archive, decompresses it in the
+  browser, and draws it. It does not send the table to a server.
+
+  Counts on the first parse of this mirror:
+    inService         214,073
+    inPlanning         83,427
+    decommissioned     38,190
+    other                  11
+
+WHAT THIS IS NOT
+  Not affiliated with or endorsed by Flock Safety.
+  Not a permit roster, not a live camera, not a plate search.
+  A shared coordinate is a lead, not proof of a room.
+  Locations are the published points. They were not re-surveyed here.
+
+SEE ALSO
+  manifest.json in this same folder.
